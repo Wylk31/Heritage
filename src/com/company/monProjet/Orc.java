@@ -1,6 +1,6 @@
 package com.company.monProjet;
 
-public class Orc {
+public class Orc implements java.lang.Comparable<Orc> {
 
     private String name = "NameLess";
     private int health;
@@ -53,5 +53,16 @@ public class Orc {
         sb.append(", force=").append(force);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public int compareTo(Orc o) {
+        if(this.force < o.force) {
+            return -1;
+        } else if (this.force > o.force) {
+            return 1;
+        }else {
+            return 0;
+        }
     }
 }
